@@ -1,0 +1,18 @@
+import './App.css';
+
+function SecretComponent() {
+  return <h1>Some secret info here for secret customers only</h1>;
+}
+
+function RegularComponent() {
+  return <h1>Everyone can see this stuff here</h1>
+}
+function App({ authorised }) {
+  return (
+    <>
+      {authorised ? <SecretComponent /> : <RegularComponent />}
+    </>
+  )
+}
+
+export default App;

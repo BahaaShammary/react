@@ -1,0 +1,5 @@
+// React snippets: https://github.com/dsznajder/vscode-react-javascript-snippets/blob/HEAD/docs/Snippets.md
+// JS JSX snippets: Very helpful plugin
+
+// It makes to keep components within the same file when they are related and won't be used elsewhere other than 
+// the component file they are in.

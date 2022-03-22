@@ -1,0 +1,28 @@
+- Every react component has access to an object called props. 
+- Props holds all the properties for our component
+
+- Instead of putting stuff into a lot of <div></div> we can just add fragments 
+  return (
+    <>
+      {props.authorised ? <SecretComponent /> : <RegularComponent />}
+    </>
+  )
+
+- We can also use the conditional statement shortcut like the above
+- All components must have PascalCase in naming them
+- Each component must have a return statement (containing jsx or another component)
+- When we pass props, instead of having props in the method hearder and then doing props.authorised
+- We can just do "Object destructuring" { authorised } and this will fetch the specific variable we need rather than all the props
+- useState is a function where we can pass in to it a variable and the function returns a list: 
+    -   const [happyEmotion, setEmotion] = useState("Happy");
+    -   First item is the variable passed in, second item is a function to set the state.
+- useEffect can be used to print log messages when the state changes
+
+- A reducer most simple definition is that it takes in a current state and returns a different state
+
+- When we make an HTTP request for data, we have 3 possible states:
+    - SUCCESSF
+    - PENDING
+    - FAILED
+
+- Use `fetch` to get the data. Next, use a `then` clause to stringify the response. Finally, use another `then` clause to populate an array.

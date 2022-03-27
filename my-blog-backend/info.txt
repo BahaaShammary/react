@@ -1,0 +1,11 @@
+1. First created the project folder
+2. Initialised the folder as an npm package by running `npm init -y`
+3. We then installed express `npm install express --save`
+4. Created the server.js which acts as the entry point for our project
+4. Then install few packages from babel which help in running and compiling javascript
+`npm install --save-dev @babel/core @babel/node @babel/preset-env`
+5. Create a file .babelrc - In this file we tell it how to transform our es6 code into common js code 
+6. We create our app object, create an endpoint and start the server in server.js then run the command
+// We then run our express server by running the command:
+`npx babel-node src/server.js`
+7. install body parser package to allow server to parse json data

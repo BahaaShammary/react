@@ -9,3 +9,10 @@
 // We then run our express server by running the command:
 `npx babel-node src/server.js`
 7. install body parser package to allow server to parse json data
+
+There is an npm package that can sense when we have changed our project and refreshes
+'npm install --save-dev nodemon'
+To use it, we add to our original project launching command the following: 
+npx nodemon --exec npx babel-node src/server.js  
+
+since the command is long, we can add an alias to our package.json for a shorter command.

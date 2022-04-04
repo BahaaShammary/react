@@ -5,7 +5,9 @@ import {
 import articles from './article-content';
 import { ArticlesList } from '../components/ArticlesList';
 import { NotFoundPage } from './NotFoundPage';
-import { CommentsList} from '../components/CommentsList'
+import { CommentsList} from '../components/CommentsList';
+import { UpvoteSection } from '../components/UpvoteSection';
+import { AddCommentForm} from '../components/AddCommentForm';
 
 const ArticlePage = () => {
     const { name } = useParams(); // gain access to the url parameter and be able to pick up this value
@@ -34,10 +36,11 @@ const ArticlePage = () => {
     return (
         <>
             <h1>{article.title}</h1>
-            <p>This article has {articleInfo.upvotes} upvotes</p>
+            <UpvoteSection articleName={name} upvotes={articleInfo.upvotes} setArticleInfo={setArticleInfo}/>
             {article.content.map((p, key) => (
                 <p key={key}>{p}</p>
             ))}
+            <AddCommentForm articleName={name} setArticleInfo={setArticleInfo} />
             <CommentsList comments={articleInfo.comments} />
             <h3>Other Articles:</h3>
             <ArticlesList articles={relatedArticles} />

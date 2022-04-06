@@ -2,9 +2,15 @@
 import express from "express";
 import bodyParser from 'body-parser';
 import { MongoClient } from 'mongodb';
+import cors from 'cors';
+import path from 'path';
 
 // we create our app object - then we can define different endpoints to our app
 const app = express();
+// Using cors to avoid the cors policy when fetching. 
+app.use(cors());
+
+app.use(express.static(path.join(__dirname, '/build')))
 
 const withDB = async (operations, res) => {
     try {
@@ -72,6 +78,11 @@ app.post('/api/articles/:articleName/comment', async (req, res) => {
         res.status(200).json(updatedArticleInfo);
     }, res);
 });
+// ready the app to be deployed on the server
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '/build/index.html'));
+});
+
 // start our server on the port and display a message when it starts running
 app.listen(8000, () => console.log("Listening on port 8000"))
 

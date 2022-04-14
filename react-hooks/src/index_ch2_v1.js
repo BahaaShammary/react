@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+// Chapter 2 - V1: Reviewing array and object destructuring
+
 
 // const people = ['Alaa', 'Bahaa', 'Fouad', 'Osama', 'Sumaya']
 // we can access array by index

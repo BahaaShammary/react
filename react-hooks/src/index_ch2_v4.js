@@ -5,23 +5,17 @@ import { FaStar } from 'react-icons/fa'
 // Chapter 2 - V4: Working with component trees
 const createArray = (length) => [...Array(length)]
 
-
-const Star = ({selected = false, onSelect}) => {
+const Star = ({selected = false}) => {
     return (
-        <FaStar color={selected? "red" : "gray"} onClick={onSelect}/>
+        <FaStar color={selected? "red" : "gray"}/>
     )
 }
 
 const StarRating = ({ totalStars = 5 }) => {
-    const [selectedStars, setSelectedStars] = useState(0);
     return (
-        <>
-            {createArray(totalStars).map((n, i) => (
-            <Star key={i} selected={selectedStars > i} onSelect={() => setSelectedStars(i + 1)}/>
-        ))}
-        <p>{selectedStars} of {totalStars} </p>
-        </>
-        );
+        createArray(totalStars).map((n, i) => (
+            <Star key={i} />
+        )));
 }
 const App = () => {
     return (
